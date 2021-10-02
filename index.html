@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <div class="main-container">
+
+        <div class="calculator">
+
+            <div class="history_output" id="history_output">
+                <p class="history_output__text" id="history_output__text"></p>
+            </div>
+            <button onclick="ToggleHistory()" class="button__history">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20" fill="#fff">
+                    <path d="M9 6v5h.06l2.48 2.47 1.41-1.41L11 10.11V6H9z" />
+                    <path d="M10 1a9 9 0 0 0-7.85 13.35L.5 16H6v-5.5l-2.38 2.38A7 7 0 1 1 10 17v2a9 9 0 0 0 0-18z" />
+                </svg>
+            </button>
+
+
+            <div class="display">
+                <div class="output">
+                    <div class="output__expression" id="prevDisplay"></div>
+                    <div class="output__main" id="mainDisplay">0</div>
+                </div>
+            </div>
+
+
+            <div class="input">
+
+                <div class="input__area area__controllers">
+                    <button onclick="ClearOperand()"
+                        class="input__area__button clean area__controllers__button">C</button>
+                    <button onclick="ConvertSign()" class="input__area__button area__controllers__button">
+                        <span>±</span> </button>
+                    <button onclick="GetPercent()" class="input__area__button area__controllers__button"> <span>%</span>
+                    </button>
+                </div>
+
+                <div class="input__area area__operators">
+                    <button onclick="AddOperator('*')" class="input__area__button area__operators__button">×</button>
+                    <button onclick="AddOperator('/')" class="input__area__button area__operators__button">÷</button>
+                    <button onclick="AddOperator('-')" class="input__area__button area__operators__button">-</button>
+                    <button onclick="AddOperator('+')" class="input__area__button area__operators__button">+</button>
+                    <button onclick="GetResult()" class="input__area__button area__operators__button">=</button>
+                </div>
+
+                <div class="input__area area__numbers">
+                    <button onclick="AddOperand('8')" class="input__area__button">8</button>
+                    <button onclick="AddOperand('9')" class="input__area__button">9</button>
+                    <button onclick="AddOperand('7')" class="input__area__button">7</button>
+                    <button onclick="AddOperand('4')" class="input__area__button">4</button>
+                    <button onclick="AddOperand('5')" class="input__area__button">5</button>
+                    <button onclick="AddOperand('6')" class="input__area__button">6</button>
+                    <button onclick="AddOperand('1')" class="input__area__button">1</button>
+                    <button onclick="AddOperand('2')" class="input__area__button">2</button>
+                    <button onclick="AddOperand('3')" class="input__area__button">3</button>
+                    <button onclick="AddOperand('.')" class="input__area__button">.</button>
+                    <button onclick="AddOperand('0')" class="input__area__button">0</button>
+                    <button onclick="DeleteOperand()" class="input__area__button"> &#8592;</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
 </body>
+
 </html>
